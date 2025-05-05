@@ -2,7 +2,7 @@
 // IMPORTANT: Replace with your WebSocket bridge URL if you implement one
 // Use "ws://localhost:8080" for the Java bridge
 // Use "ws://localhost:8080/bridge" for the Perl bridge
-const WEBSOCKET_SERVER_URL = "ws://localhost:8080"; // Adjust if needed
+const WEBSOCKET_SERVER_URL = "ws://192.168.1.130:8080"; // Adjust if needed
 const USER_PREFIX = "USER:";
 const MSG_PREFIX = "MSG:";
 const CMD_HELP = "/help";
