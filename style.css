@@ -46,6 +46,8 @@ body {
     border-bottom: 1px solid #e0e0e0;
     border-top-left-radius: 12px; /* Redondeo superior izquierdo */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative; /* Needed for z-index if overlapping occurs */
+    z-index: 10; /* Ensure header is above chatbox content */
 }
 
 .chat-header h1 {
@@ -64,11 +66,9 @@ body {
 .chatbox-wrapper {
     flex-grow: 1; /* Ocupa el espacio vertical */
     overflow-y: auto; /* Scroll vertical si es necesario */
-    padding: 20px;
+    /* **MODIFIED:** Increased top padding */
+    padding: 30px 20px 20px 20px; /* Top padding increased to 30px */
     background-color: #f9f9f9; /* Fondo ligeramente distinto */
-    display: flex;
-    flex-direction: column-reverse; /* Mensajes nuevos abajo (visualmente) */
-    overflow-anchor: auto; /* Mantiene la vista anclada */
 }
 
 .chatbox {
@@ -82,7 +82,6 @@ body {
 .message-container {
     display: flex;
     max-width: 75%; /* Ancho máximo del mensaje */
-    overflow-anchor: none; /* Evita que mensajes individuales afecten el anclaje */
 }
 
 .message-container.self-start {
