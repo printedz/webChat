@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden; /* Evitar scroll en el body */
+    overflow-y: auto; /* MODIFIED: Allow vertical scroll on body if content exceeds viewport */
 }
 
 /* --- Contenedor Principal del Chat --- */
@@ -66,9 +66,9 @@ body {
 .chatbox-wrapper {
     flex-grow: 1; /* Ocupa el espacio vertical */
     overflow-y: auto; /* Scroll vertical si es necesario */
-    /* **MODIFIED:** Increased top padding */
     padding: 30px 20px 20px 20px; /* Top padding increased to 30px */
     background-color: #f9f9f9; /* Fondo ligeramente distinto */
+    -webkit-overflow-scrolling: touch; /* ADDED: For smoother iOS scrolling */
 }
 
 .chatbox {
@@ -271,6 +271,7 @@ body {
     flex-grow: 1;
     overflow-y: auto; /* Scroll si la lista es larga */
     padding-right: 5px; /* Espacio para scrollbar */
+    -webkit-overflow-scrolling: touch; /* ADDED: For smoother iOS scrolling */
 }
 
 .user-list li {
